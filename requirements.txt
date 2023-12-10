@@ -1,3 +1,4 @@
-streamlit==1.10.0
-pandas==1.1.5
-base58==2.0.1
+streamlit
+pandas
+base58
+openpyxl
