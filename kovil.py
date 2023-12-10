@@ -1,12 +1,7 @@
 import streamlit as st
 import pandas as pd
 import base64
-from PIL import Image
-st.header("திதி யோகம் கரணம் ஆராய்ச்சியாளர் சேலம் சிவக்குமார்")
-image = Image.open("image.jpg")
-new_image = image.resize((200, 400))
-st.image(new_image)
-#st.image("image.jpg")
+
 # Define the filedownload function
 #def filedownload(df):
     #csv = df.to_csv(index=False)
@@ -17,8 +12,8 @@ h=st.sidebar.selectbox("திதி",('வளர்பிறை திதி','
 # Your code to read the Excel file
 
 if h=='வளர்பிறை திதி':
-    st.subheader('வளர்பிறை திதி')
-    df = pd.read_excel(r"C:\Users\G K Ritanya\Desktop\temple\mohan01.xlsx", engine="openpyxl")
+    st.header('வளர்பிறை திதி')
+    df = pd.read_excel("mohan01.xlsx", engine="openpyxl")
     #st.table(df)
     a=st.sidebar.selectbox(
     'வளர்பிறை திதி',
@@ -55,8 +50,8 @@ if h=='வளர்பிறை திதி':
     elif a=='பவுர்ணமி':
         s=st.table(df.iloc[14])
 else:
-    st.subheader('தேய்பிறை திதி')
-    df1 = pd.read_excel(r"C:\Users\G K Ritanya\Desktop\temple\mohan02.xlsx", engine="openpyxl")
+    st.header('தேய்பிறை திதி')
+    df1 = pd.read_excel("mohan02.xlsx", engine="openpyxl")
     #st.table(df1)
     b=st.sidebar.selectbox(
     'தேய்பிறை திதி',
@@ -92,8 +87,8 @@ else:
         t=st.table(df1.iloc[13])
     elif b=='அமாவாசை':
         t=st.table(df1.iloc[14])
-st.subheader('நாம யோகங்கள்')
-df2 = pd.read_excel(r"C:\Users\G K Ritanya\Desktop\temple\mohan03.xlsx", engine="openpyxl")
+st.header('நாம யோகங்கள்')
+df2 = pd.read_excel("mohan03.xlsx", engine="openpyxl")
 #st.table(df2)
 c=st.sidebar.selectbox( 'நாம யோகங்கள்',
     ('விஷ்கம்பம்', 'ப்ரீதி',"ஆயுஷ்மான்","சவுபாக்கியம்","சோபனம்","அதிகண்டம்","சுகர்மம்","திருதி","சூலம்",
@@ -153,8 +148,7 @@ elif c=='மாஹேத்திரம்':
     su=t.table(df2.iloc[25])
 elif c=='வைத்திருதி':
     u=st.table(df2.iloc[26])
-st.subheader('முடக்கு')
-df3 = pd.read_excel(r"C:\Users\G K Ritanya\Desktop\temple\mohan04.xlsx", engine="openpyxl")
+df3 = pd.read_excel("mohan04.xlsx", engine="openpyxl")
 #st.table(df3)
 d=st.sidebar.selectbox( 'முடக்கு',
     ('1', '2',"3","4","5","6","7","8","9","10","11","12"))
