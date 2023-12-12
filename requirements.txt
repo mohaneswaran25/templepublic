@@ -3,3 +3,4 @@ pandas
 base58
 openpyxl
 PIL
+pip
