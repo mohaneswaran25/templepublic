@@ -396,5 +396,65 @@ elif d=="12":
         v=st.table(y[y["முடக்கு ராசி/கிரகம்"]=="ராகு இருந்தால்"])
     elif e=="கேது இருந்தால்":
         v=st.table(y[y["முடக்கு ராசி/கிரகம்"]=="கேது இருந்தால்"])
+st.subheader('வைநாசிகம்')
+df4 = pd.read_excel("mohan05.xlsx", engine="openpyxl")
+g=st.sidebar.selectbox( 'வைநாசிகம்',
+    ('அஸ்வினி', 'பரணி',"கிருத்திகை","ரோகிணி","மிருகஷீரிடம்","திருவாதிரை","புனர்பூசம்","பூசம்","ஆயில்யம்",
+     "மகம்","பூரம்","உத்திரம்","அஸ்தம்","சித்திரை","சுவாதி","விசாகம்","அனுஷம்","கேட்டை","மூலம்",
+     "பூராடம்","உத்திராடம்","திருவோணம்","அவிட்டம்","சதயம்","பூரட்டாதி","உத்திரட்டாதி","ரேவதி"))
+if g=='அஸ்வினி':
+    w=st.table(df4.iloc[0])
+elif g=='பரணி':
+    w=st.table(df4.iloc[1])
+elif g=='கிருத்திகை':
+    w=st.table(df4.iloc[2])
+elif g=='ரோகிணி':
+    w=st.table(df4.iloc[3])
+elif g=='மிருகஷீரிடம்':
+    w=st.table(df4.iloc[4])
+elif g=='திருவாதிரை':
+    w=st.table(df4.iloc[5])
+elif g=='புனர்பூசம்':
+    w=st.table(df4.iloc[6])
+elif g=='பூசம்':
+    w=st.table(df4.iloc[7])
+elif g=='ஆயில்யம்':
+    w=st.table(df4.iloc[8])
+elif g=='மகம்':
+    w=st.table(df4.iloc[9])
+elif g=='பூரம்':
+    w=st.table(df4.iloc[10])
+elif g=='உத்திரம்':
+    w=st.table(df4.iloc[11])
+elif g=='அஸ்தம்':
+    w=st.table(df4.iloc[12])
+elif g=='சித்திரை':
+    w=st.table(df4.iloc[13])
+elif g=='சுவாதி':
+    w=st.table(df4.iloc[14])
+elif g=='விசாகம்':
+    w=st.table(df4.iloc[15])
+elif g=='அனுஷம்':
+    w=st.table(df4.iloc[16])
+elif g=='கேட்டை':
+    w=st.table(df4.iloc[17])
+elif g=='மூலம்':
+    w=st.table(df4.iloc[18])
+elif g=='பூராடம்':
+    w=st.table(df4.iloc[19])
+elif g=='உத்திராடம்':
+    w=st.table(df4.iloc[20])
+elif g=='திருவோணம்':
+    w=st.table(df4.iloc[21])
+elif g=='அவிட்டம்':
+    w=st.table(df4.iloc[22])
+elif g=='சதயம்':
+    w=st.table(df4.iloc[23])
+elif g=='பூரட்டாதி':
+    w=st.table(df4.iloc[24])
+elif g=='உத்திரட்டாதி':
+    w=st.table(df4.iloc[25])
+elif g=='ரேவதி':
+    w=st.table(df4.iloc[26])
 # Use the filedownload function
 #st.markdown(filedownload(df), unsafe_allow_html=True)
