@@ -1,11 +1,12 @@
 import streamlit as st
 import pandas as pd
 import base64
-#from PIL import Image
+from PIL import Image
 st.header("திதி யோகம் கரணம் ஆராய்ச்சியாளர் சேலம் சிவக்குமார்")
-#image = Image.open("image.jpg")
-#new_image = image.resize((200, 400))
-st.image("image.jpg",width=400,use_column_width=200)
+image = Image.open("image.jpg")
+new_image = image.resize((200, 400))
+st.image(new_image)
+#st.image("image.jpg",width=400,use_column_width=200)
 # Define the filedownload function
 #def filedownload(df):
     #csv = df.to_csv(index=False)
