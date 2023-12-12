@@ -148,6 +148,7 @@ elif c=='மாஹேத்திரம்':
     su=t.table(df2.iloc[25])
 elif c=='வைத்திருதி':
     u=st.table(df2.iloc[26])
+st.header('முடக்கு')
 df3 = pd.read_excel("mohan04.xlsx", engine="openpyxl")
 #st.table(df3)
 d=st.sidebar.selectbox( 'முடக்கு',
