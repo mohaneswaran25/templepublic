@@ -2,3 +2,4 @@ streamlit
 pandas
 base58
 openpyxl
+PIL
