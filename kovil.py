@@ -4,7 +4,7 @@ import base64
 from PIL import Image
 st.header("திதி யோகம் கரணம் ஆராய்ச்சியாளர் சேலம் சிவக்குமார்")
 image = Image.open("image.jpg")
-new_image = image.resize((400, 150))
+new_image = image.resize((200, 400))
 st.image(new_image)
 #st.image("image.jpg",width=400,use_column_width=200)
 # Define the filedownload function
