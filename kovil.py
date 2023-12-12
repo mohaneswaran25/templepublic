@@ -5,7 +5,7 @@ import base64
 st.header("திதி யோகம் கரணம் ஆராய்ச்சியாளர் சேலம் சிவக்குமார்")
 #image = Image.open("image.jpg")
 #new_image = image.resize((200, 400))
-st.image("image.jpg",width=400,height=200)
+st.image("image.jpg",width=400,use_column_width=200)
 # Define the filedownload function
 #def filedownload(df):
     #csv = df.to_csv(index=False)
