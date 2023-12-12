@@ -460,29 +460,4 @@ elif g=='உத்திரட்டாதி':
     w=st.table(df4.iloc[25])
 elif g=='ரேவதி':
     w=st.table(df4.iloc[26])
-st.subheader('கரணம்')
-df5 = pd.read_excel("mohan06.xlsx", engine="openpyxl")
-i=st.sidebar.selectbox( 'கரணம்',
-    ('பவம்', 'பாலவம்',"கௌலவம்","தைதுளை","கரசை","வணிசை","பத்திரை","சகுனி","சதுஸ்பாதம்","நாகவம்","கிம்ஸ்துக்கினம்"))
-if i=='பவம்':
-    j=st.table(df5.iloc[0])
-elif i=='பாலவம்':
-    j=st.table(df5.iloc[1])
-elif i=='கௌலவம்':
-    j=st.table(df5.iloc[2])
-elif i=='தைதுளை':
-    j=st.table(df5.iloc[3])
-elif i=='கரசை':
-    j=st.table(df5.iloc[4])
-elif i=='வணிசை':
-    j=st.table(df5.iloc[5])
-elif i=='பத்திரை':
-    j=st.table(df5.iloc[6])
-elif i=='சகுனி':
-    j=st.table(df5.iloc[7])
-elif i=='சதுஸ்பாதம்':
-    j=st.table(df5.iloc[8])
-elif i=='நாகவம்':
-    j=st.table(df5.iloc[9])
-elif i=='கிம்ஸ்துக்கினம்':
-    j=st.table(df5.iloc[10])
+
