@@ -6,7 +6,6 @@ st.header("திதி யோகம் கரணம் ஆராய்ச்ச
 image = Image.open("image.jpg")
 new_image = image.resize((200, 400))
 st.image(new_image)
-
 # Define the filedownload function
 #def filedownload(df):
     #csv = df.to_csv(index=False)
@@ -15,7 +14,6 @@ st.image(new_image)
     #return href
 h=st.sidebar.selectbox("திதி",('வளர்பிறை திதி','தேய்பிறை திதி'))
 # Your code to read the Excel file
-
 if h=='வளர்பிறை திதி':
     st.header('வளர்பிறை திதி')
     df = pd.read_excel("mohan01.xlsx", engine="openpyxl")
@@ -488,5 +486,3 @@ elif i=='நாகவம்':
     j=st.table(df5.iloc[9])
 elif i=='கிம்ஸ்துக்கினம்':
     j=st.table(df5.iloc[10])
-# Use the filedownload function
-#st.markdown(filedownload(df), unsafe_allow_html=True)
