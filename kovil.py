@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import base64
 from PIL import Image
-st.header("        திதி யோக கரண ஆராய்ச்சியாளர் சிவக்குமார்")
+st.header("சிவக்குமார் திதி யோக கரண ஆராய்ச்சியாளர் ")
 st.write("கால பைரவர் ஜோதிட பவனம் காடையாம்பட்டி சேலம்")
 st.write("cell: +91 8883113734, +91 6379411673")
 image = Image.open("image.jpg")
