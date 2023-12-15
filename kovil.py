@@ -4,6 +4,19 @@ import base64
 from PIL import Image
 col1, col2= st.columns(2)
 with col1:
+   st.markdown(
+    """
+    <style>
+        button[title^=Exit]+div [data-testid=stImage]{
+            text-align: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+    </style>
+    """, unsafe_allow_html=True
+)
    image = Image.open("image.jpg")
    new_image = image.resize((200, 250))
    st.image(new_image)
