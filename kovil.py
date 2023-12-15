@@ -18,7 +18,7 @@ with col1:
     """, unsafe_allow_html=True
 )
 left_co, cent_co,last_co = st.columns(3)
-with cent_co:
+with left_co:
    image = Image.open("image.jpg")
    new_image = image.resize((200, 250))
    st.image(new_image)
