@@ -36,7 +36,7 @@ with col2:
 h=st.sidebar.selectbox("திதி",('வளர்பிறை திதி','தேய்பிறை திதி'))
 # Your code to read the Excel file
 if h=='வளர்பிறை திதி':
-    st.markdown("<h1 style='text-align: center; color: black;'>வளர்பிறை திதி</h1>", unsafe_allow_html=True)
+    st.markdown("**<h1 style='text-align: center; color: black;'>வளர்பிறை திதி</h1>**", unsafe_allow_html=True)
     #st.subheader('வளர்பிறை திதி')
     df = pd.read_excel("mohan01.xlsx", engine="openpyxl")
     #st.table(df)
@@ -425,7 +425,7 @@ elif d=="12":
         v=st.table(y[y["முடக்கு ராசி/கிரகம்"]=="ராகு இருந்தால்"])
     elif e=="கேது இருந்தால்":
         v=st.table(y[y["முடக்கு ராசி/கிரகம்"]=="கேது இருந்தால்"])
-st.markdown("<h1 style='text-align: center; color: black;'>வைநாசிகம்'</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: black;'>வைநாசிகம்</h1>", unsafe_allow_html=True)
 #st.subheader('வைநாசிகம்')
 df4 = pd.read_excel("mohan05.xlsx", engine="openpyxl")
 g=st.sidebar.selectbox( 'வைநாசிகம்',
@@ -486,7 +486,7 @@ elif g=='உத்திரட்டாதி':
     w=st.table(df4.iloc[25])
 elif g=='ரேவதி':
     w=st.table(df4.iloc[26])
-st.markdown("<h1 style='text-align: center; color: black;'>கரணம்'</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: black;'>கரணம்</h1>", unsafe_allow_html=True)
 #st.subheader('கரணம்')
 df5 = pd.read_excel("mohan06.xlsx", engine="openpyxl")
 i=st.sidebar.selectbox( 'கரணம்',
