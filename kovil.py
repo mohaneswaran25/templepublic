@@ -36,6 +36,7 @@ with col2:
 h=st.sidebar.selectbox("திதி",('வளர்பிறை திதி','தேய்பிறை திதி'))
 # Your code to read the Excel file
 if h=='வளர்பிறை திதி':
+    st.markdown("<h1 style='text-align: center; color: red;'>வளர்பிறை திதி</h1>", unsafe_allow_html=True)
     st.subheader('வளர்பிறை திதி')
     df = pd.read_excel("mohan01.xlsx", engine="openpyxl")
     #st.table(df)
