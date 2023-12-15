@@ -36,8 +36,8 @@ with col2:
 h=st.sidebar.selectbox("திதி",('வளர்பிறை திதி','தேய்பிறை திதி'))
 # Your code to read the Excel file
 if h=='வளர்பிறை திதி':
-    st.markdown("<h1 style='text-align: center; color: red;'>வளர்பிறை திதி</h1>", unsafe_allow_html=True)
-    st.subheader('வளர்பிறை திதி')
+    st.markdown("<h1 style='text-align: center; color: black;'>வளர்பிறை திதி</h1>", unsafe_allow_html=True)
+    #st.subheader('வளர்பிறை திதி')
     df = pd.read_excel("mohan01.xlsx", engine="openpyxl")
     #st.table(df)
     a=st.sidebar.selectbox(
@@ -75,7 +75,8 @@ if h=='வளர்பிறை திதி':
     elif a=='பவுர்ணமி':
         s=st.table(df.iloc[14])
 else:
-    st.header('தேய்பிறை திதி')
+    st.markdown("<h1 style='text-align: center; color: black;'>தேய்பிறை திதி</h1>", unsafe_allow_html=True)
+    #st.header('தேய்பிறை திதி')
     df1 = pd.read_excel("mohan02.xlsx", engine="openpyxl")
     #st.table(df1)
     b=st.sidebar.selectbox(
@@ -112,7 +113,8 @@ else:
         t=st.table(df1.iloc[13])
     elif b=='அமாவாசை':
         t=st.table(df1.iloc[14])
-st.subheader('நாம யோகங்கள்')
+st.markdown("<h1 style='text-align: center; color: black;'>நாம யோகங்கள்</h1>", unsafe_allow_html=True)
+#st.subheader('நாம யோகங்கள்')
 df2 = pd.read_excel("mohan03.xlsx", engine="openpyxl")
 #st.table(df2)
 c=st.sidebar.selectbox( 'நாம யோகங்கள்',
@@ -173,7 +175,8 @@ elif c=='மாஹேத்திரம்':
     su=t.table(df2.iloc[25])
 elif c=='வைத்திருதி':
     u=st.table(df2.iloc[26])
-st.subheader('முடக்கு')
+st.markdown("<h1 style='text-align: center; color: black;'>முடக்கு</h1>", unsafe_allow_html=True)
+#st.subheader('முடக்கு')
 df3 = pd.read_excel("mohan04.xlsx", engine="openpyxl")
 #st.table(df3)
 d=st.sidebar.selectbox( 'முடக்கு',
@@ -422,7 +425,8 @@ elif d=="12":
         v=st.table(y[y["முடக்கு ராசி/கிரகம்"]=="ராகு இருந்தால்"])
     elif e=="கேது இருந்தால்":
         v=st.table(y[y["முடக்கு ராசி/கிரகம்"]=="கேது இருந்தால்"])
-st.subheader('வைநாசிகம்')
+st.markdown("<h1 style='text-align: center; color: black;'>வைநாசிகம்'</h1>", unsafe_allow_html=True)
+#st.subheader('வைநாசிகம்')
 df4 = pd.read_excel("mohan05.xlsx", engine="openpyxl")
 g=st.sidebar.selectbox( 'வைநாசிகம்',
     ('அஸ்வினி', 'பரணி',"கிருத்திகை","ரோகிணி","மிருகஷீரிடம்","திருவாதிரை","புனர்பூசம்","பூசம்","ஆயில்யம்",
@@ -482,7 +486,8 @@ elif g=='உத்திரட்டாதி':
     w=st.table(df4.iloc[25])
 elif g=='ரேவதி':
     w=st.table(df4.iloc[26])
-st.subheader('கரணம்')
+st.markdown("<h1 style='text-align: center; color: black;'>கரணம்'</h1>", unsafe_allow_html=True)
+#st.subheader('கரணம்')
 df5 = pd.read_excel("mohan06.xlsx", engine="openpyxl")
 i=st.sidebar.selectbox( 'கரணம்',
     ('பவம்', 'பாலவம்',"கௌலவம்","தைதுளை","கரசை","வணிசை","பத்திரை","சகுனி","சதுஸ்பாதம்","நாகவம்","கிம்ஸ்துக்கினம்"))
