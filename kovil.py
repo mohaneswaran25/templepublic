@@ -2,12 +2,17 @@ import streamlit as st
 import pandas as pd
 import base64
 from PIL import Image
-st.header("சிவக்குமார் திதி யோக கரண ஆராய்ச்சியாளர் ")
-st.write("கால பைரவர் ஜோதிட பவனம் காடையாம்பட்டி சேலம்")
-st.write("cell: +91 8883113734, +91 6379411673")
-image = Image.open("image.jpg")
-new_image = image.resize((200, 250))
-st.image(new_image)
+col1, col2= st.columns(2)
+with col1:
+   image = Image.open("image.jpg")
+   new_image = image.resize((200, 250))
+   st.image(new_image)
+with col2:
+   st.header("திரு சிவக்குமார் திதி யோக கரண ஆராய்ச்சியாளர் ")
+   st.write("கால பைரவர் ஜோதிட பவனம் காடையாம்பட்டி சேலம்")
+   st.write("cell: +91 8883113734, +91 6379411673")
+
+
 #st.image("image.jpg",width=400,use_column_width=200)
 # Define the filedownload function
 #def filedownload(df):
