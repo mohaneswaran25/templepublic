@@ -7,7 +7,7 @@ with col1:
    image = Image.open("image.jpg")
    new_image = image.resize((200, 250))
    st.image(new_image)
-   st.header("திரு சிவக்குமார்")
+   st.subheader("திரு சிவக்குமார்")
    st.write("**திதி யோக கரண ஆராய்ச்சியாளர்**")
 with col2:
    st.header("திரு சிவக்குமார் திதி யோக கரண ஆராய்ச்சியாளர் ")
