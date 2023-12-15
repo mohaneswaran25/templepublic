@@ -23,7 +23,7 @@ with col2:
 h=st.sidebar.selectbox("திதி",('வளர்பிறை திதி','தேய்பிறை திதி'))
 # Your code to read the Excel file
 if h=='வளர்பிறை திதி':
-    st.header('வளர்பிறை திதி')
+    st.subheader('வளர்பிறை திதி')
     df = pd.read_excel("mohan01.xlsx", engine="openpyxl")
     #st.table(df)
     a=st.sidebar.selectbox(
@@ -98,7 +98,7 @@ else:
         t=st.table(df1.iloc[13])
     elif b=='அமாவாசை':
         t=st.table(df1.iloc[14])
-st.header('நாம யோகங்கள்')
+st.subheader('நாம யோகங்கள்')
 df2 = pd.read_excel("mohan03.xlsx", engine="openpyxl")
 #st.table(df2)
 c=st.sidebar.selectbox( 'நாம யோகங்கள்',
@@ -159,7 +159,7 @@ elif c=='மாஹேத்திரம்':
     su=t.table(df2.iloc[25])
 elif c=='வைத்திருதி':
     u=st.table(df2.iloc[26])
-st.header('முடக்கு')
+st.subheader('முடக்கு')
 df3 = pd.read_excel("mohan04.xlsx", engine="openpyxl")
 #st.table(df3)
 d=st.sidebar.selectbox( 'முடக்கு',
