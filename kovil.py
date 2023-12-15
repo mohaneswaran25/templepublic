@@ -21,6 +21,8 @@ with col1:
    new_image = image.resize((200, 250))
    st.image(new_image)
 with col2:
+   
+   st.markdown("**<h1 style='text-align: center; color: black;'>திரு சிவக்குமார் திதி யோக கரண ஆராய்ச்சியாளர்</h1>**", unsafe_allow_html=True)
    st.header("திரு சிவக்குமார் திதி யோக கரண ஆராய்ச்சியாளர் ")
    st.write("**கால பைரவர் ஜோதிட பவனம் காடையாம்பட்டி சேலம்**")
    st.write("**cell: +91 8883113734, +91 6379411673**")
@@ -75,7 +77,7 @@ if h=='வளர்பிறை திதி':
     elif a=='பவுர்ணமி':
         s=st.table(df.iloc[14])
 else:
-    st.markdown("<h1 style='text-align: center; color: black;'>தேய்பிறை திதி</h1>", unsafe_allow_html=True)
+    st.markdown("**<h1 style='text-align: center; color: black;'>தேய்பிறை திதி</h1>**", unsafe_allow_html=True)
     #st.header('தேய்பிறை திதி')
     df1 = pd.read_excel("mohan02.xlsx", engine="openpyxl")
     #st.table(df1)
@@ -113,7 +115,7 @@ else:
         t=st.table(df1.iloc[13])
     elif b=='அமாவாசை':
         t=st.table(df1.iloc[14])
-st.markdown("<h1 style='text-align: center; color: black;'>நாம யோகங்கள்</h1>", unsafe_allow_html=True)
+st.markdown("**<h1 style='text-align: center; color: black;'>நாம யோகங்கள்</h1>**", unsafe_allow_html=True)
 #st.subheader('நாம யோகங்கள்')
 df2 = pd.read_excel("mohan03.xlsx", engine="openpyxl")
 #st.table(df2)
@@ -175,7 +177,7 @@ elif c=='மாஹேத்திரம்':
     su=t.table(df2.iloc[25])
 elif c=='வைத்திருதி':
     u=st.table(df2.iloc[26])
-st.markdown("<h1 style='text-align: center; color: black;'>முடக்கு</h1>", unsafe_allow_html=True)
+st.markdown("**<h1 style='text-align: center; color: black;'>முடக்கு</h1>**", unsafe_allow_html=True)
 #st.subheader('முடக்கு')
 df3 = pd.read_excel("mohan04.xlsx", engine="openpyxl")
 #st.table(df3)
@@ -425,7 +427,7 @@ elif d=="12":
         v=st.table(y[y["முடக்கு ராசி/கிரகம்"]=="ராகு இருந்தால்"])
     elif e=="கேது இருந்தால்":
         v=st.table(y[y["முடக்கு ராசி/கிரகம்"]=="கேது இருந்தால்"])
-st.markdown("<h1 style='text-align: center; color: black;'>வைநாசிகம்</h1>", unsafe_allow_html=True)
+st.markdown("**<h1 style='text-align: center; color: black;'>வைநாசிகம்</h1>**", unsafe_allow_html=True)
 #st.subheader('வைநாசிகம்')
 df4 = pd.read_excel("mohan05.xlsx", engine="openpyxl")
 g=st.sidebar.selectbox( 'வைநாசிகம்',
@@ -486,7 +488,7 @@ elif g=='உத்திரட்டாதி':
     w=st.table(df4.iloc[25])
 elif g=='ரேவதி':
     w=st.table(df4.iloc[26])
-st.markdown("<h1 style='text-align: center; color: black;'>கரணம்</h1>", unsafe_allow_html=True)
+st.markdown("**<h1 style='text-align: center; color: black;'>கரணம்</h1>**", unsafe_allow_html=True)
 #st.subheader('கரணம்')
 df5 = pd.read_excel("mohan06.xlsx", engine="openpyxl")
 i=st.sidebar.selectbox( 'கரணம்',
