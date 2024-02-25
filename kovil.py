@@ -24,10 +24,10 @@ from PIL import Image
    
 st.markdown("**<h1 style='text-align: center; color: black;'>திதி யோக கரண ஆராய்ச்சியாளர் கால கணித ஜோதிடர் திரு. சந்திர சிவக்குமார்</h1>**", unsafe_allow_html=True)
    #st.header("திரு சிவக்குமார் திதி யோக கரண ஆராய்ச்சியாளர் ")
-   #st.markdown("***<h1 style='text-align: center; color: black;'>கால பைரவர் ஜோதிட பவனம் காடையாம்பட்டி சேலம்</h1>***", unsafe_allow_html=True)
-st.write("**கால பைரவர் ஜோதிட பவனம் காடையாம்பட்டி சேலம் மாவட்டம்**")
-   #st.markdown("***<h1 style='text-align: center; color: black;'>cell: +91 8883113734, +91 6379411673</h1>***", unsafe_allow_html=True)
-st.write("**cell: +91 8883113734, +91 6379411673**")
+st.markdown("***<h1 style='text-align: center; color: black;'>கால பைரவர் ஜோதிட பவனம் காடையாம்பட்டி சேலம் மாவட்டம்</h1>***", unsafe_allow_html=True)
+#st.write("**கால பைரவர் ஜோதிட பவனம் காடையாம்பட்டி சேலம் மாவட்டம்**")
+st.markdown("***<h1 style='text-align: center; color: black;'>cell: +91 8883113734, +91 6379411673</h1>***", unsafe_allow_html=True)
+#st.write("**cell: +91 8883113734, +91 6379411673**")
 
 
 #st.image("image.jpg",width=400,use_column_width=200)
