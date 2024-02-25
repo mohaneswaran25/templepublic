@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import base64
 from PIL import Image
-col1, col2= st.columns(2)
+#col1, col2= st.columns(2)
 #with col1:
    #st.markdown(
     #"""
@@ -20,14 +20,14 @@ col1, col2= st.columns(2)
    #image = Image.open("image.jpg")
    #new_image = image.resize((200, 250))
    #st.image(new_image)
-with col2:
+#with col2:
    
-   st.markdown("**<h1 style='text-align: center; color: black;'>திதி யோக கரண ஆராய்ச்சியாளர் கால கணித ஜோதிடர் திரு. சந்திர சிவக்குமார்</h1>**", unsafe_allow_html=True)
+st.markdown("**<h1 style='text-align: center; color: black;'>திதி யோக கரண ஆராய்ச்சியாளர் கால கணித ஜோதிடர் திரு. சந்திர சிவக்குமார்</h1>**", unsafe_allow_html=True)
    #st.header("திரு சிவக்குமார் திதி யோக கரண ஆராய்ச்சியாளர் ")
    #st.markdown("***<h1 style='text-align: center; color: black;'>கால பைரவர் ஜோதிட பவனம் காடையாம்பட்டி சேலம்</h1>***", unsafe_allow_html=True)
-   st.write("**கால பைரவர் ஜோதிட பவனம் காடையாம்பட்டி சேலம் மாவட்டம்**")
+st.write("**கால பைரவர் ஜோதிட பவனம் காடையாம்பட்டி சேலம் மாவட்டம்**")
    #st.markdown("***<h1 style='text-align: center; color: black;'>cell: +91 8883113734, +91 6379411673</h1>***", unsafe_allow_html=True)
-   st.write("**cell: +91 8883113734, +91 6379411673**")
+st.write("**cell: +91 8883113734, +91 6379411673**")
 
 
 #st.image("image.jpg",width=400,use_column_width=200)
