@@ -1,26 +1,29 @@
 import streamlit as st
 import pandas as pd
 
-
-# Function to make "இணையதள இணைப்பு" and "இணையதள இணைப்பு.1" columns clickable
-def make_links_clickable(df, link_columns):
-    for col in link_columns:
-        if col in df.columns:
-            df[col] = df[col].apply(
-                lambda x: f'<a href="{x}" target="_blank">Click here</a>' if pd.notna(x) else '')
-    return df
-
+# Custom CSS for auto-sizing width of markdown content
+st.markdown("""
+    <style>
+    .markdown-container {
+        width: auto !important;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    </style>
+""", unsafe_allow_html=True)
 
 # Header Information
 st.markdown(
-    "<h1 style='text-align: center; color: black;'>திதி யோக கரண ஆராய்ச்சியாளர் திரு. சந்திர சிவக்குமார்</h1>",
+    "<div class='markdown-container'><h1>திதி யோக கரண ஆராய்ச்சியாளர் திரு. சந்திர சிவக்குமார்</h1></div>",
     unsafe_allow_html=True)
 st.markdown(
-    "<h1 style='text-align: center; color: black;'>கால பைரவர் ஜோதிட பவனம் காடையாம்பட்டி சேலம் மாவட்டம்</h1>",
+    "<div class='markdown-container'><h1>கால பைரவர் ஜோதிட பவனம் காடையாம்பட்டி சேலம் மாவட்டம்</h1></div>",
     unsafe_allow_html=True)
 st.markdown(
-    "<h1 style='text-align: center; color: black;'>Cell: +91 8883113734</h1>",
+    "<div class='markdown-container'><h1>Cell: +91 8883113734</h1></div>",
     unsafe_allow_html=True)
+
 
 # Sidebar selection for Tithi, Yogam, Mudakku, and Karanam
 tithi_type = st.sidebar.selectbox("திதி", ('வளர்பிறை திதி', 'தேய்பிறை திதி'))
