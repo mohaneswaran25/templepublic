@@ -15,7 +15,7 @@ def make_links_clickable(df, link_columns):
 st.markdown("""
     <style>
     table {
-        width: 100%;
+        width: auto%;
     }
     th, td {
         text-align: center !important;
