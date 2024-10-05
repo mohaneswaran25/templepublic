@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 
-
 # Function to make "இணையதள இணைப்பு" and "இணையதள இணைப்பு.1" columns clickable
 def make_links_clickable(df, link_columns):
     for col in link_columns:
@@ -9,7 +8,6 @@ def make_links_clickable(df, link_columns):
             df[col] = df[col].apply(
                 lambda x: f'<a href="{x}" target="_blank">Click here</a>' if pd.notna(x) else '')
     return df
-
 
 # Custom CSS for auto-sizing table width and height
 st.markdown("""
