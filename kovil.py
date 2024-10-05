@@ -73,10 +73,10 @@ second_part = selected_namayogam_df.iloc[:, 5:]
 combined_df = pd.concat([selected_namayogam_df.iloc[:, :1], second_part], axis=1)
 
 # Display the first part and second part of the DataFrame separately
-st.markdown("<h2>First Part</h2>", unsafe_allow_html=True)
+#st.markdown("<h2>First Part</h2>", unsafe_allow_html=True)
 st.markdown(first_part.to_html(escape=False, index=False), unsafe_allow_html=True)
 
-st.markdown("<h2>Second Part (After Adding First Part)</h2>", unsafe_allow_html=True)
+#st.markdown("<h2>Second Part (After Adding First Part)</h2>", unsafe_allow_html=True)
 st.markdown(combined_df.to_html(escape=False, index=False), unsafe_allow_html=True)
 
 # Mudakku section with clickable link
