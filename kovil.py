@@ -11,6 +11,19 @@ def make_links_clickable(df, link_columns):
             )
     return df
 
+# Custom CSS for centering table content
+st.markdown("""
+    <style>
+    table {
+        width: 100%;
+    }
+    th, td {
+        text-align: center !important;
+        vertical-align: middle !important;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 
 # Header Information
 st.markdown(
