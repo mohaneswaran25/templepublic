@@ -10,7 +10,7 @@ st.markdown(
     "<h1 style='text-align: center; color: black;'>கால பைரவர் ஜோதிட பவனம் காடையாம்பட்டி சேலம் மாவட்டம்</h1>",
     unsafe_allow_html=True)
 st.markdown(
-    "<h1 style='text-align: center; color: black;'>Cell: +91 8883113734_raj</h1>",
+    "<h1 style='text-align: center; color: black;'>Cell: +91 8883113734</h1>",
     unsafe_allow_html=True)
 
 # Sidebar selection for Tithi, Yogam, Mudakku, and Karanam
