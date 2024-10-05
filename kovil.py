@@ -13,9 +13,7 @@ def make_links_clickable(df, link_columns):
 st.markdown("""
     <style>
     .dataframe-container {
-        width: 100% !important;
-        height: auto !important;
-        max-width: 100% !important;
+       
         overflow-x: auto;
         overflow-y: auto;
     }
