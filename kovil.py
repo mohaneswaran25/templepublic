@@ -64,8 +64,8 @@ selected_namayogam_df = df2[df2.iloc[:, 0] == nam_yogam].copy()
 selected_namayogam_df = make_links_clickable(selected_namayogam_df, ['இணையதள இணைப்பு', 'இணையதள இணைப்பு.1'])
 
 # Split the DataFrame at the 5th index
-first_part = selected_namayogam_df.iloc[:5]
-second_part = selected_namayogam_df.iloc[5:]
+first_part = selected_namayogam_df.iloc[:, :1]
+second_part = selected_namayogam_df.iloc[6:, :]
 
 # Concatenate the values from the first part into the second part
 # Here, we concatenate row-wise using 'pd.concat'.
