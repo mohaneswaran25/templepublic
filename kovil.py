@@ -69,24 +69,28 @@ selected_namayogam_df = make_links_clickable(selected_namayogam_df, ['இணை�
 first_part = selected_namayogam_df.iloc[:, :5]
 second_part = selected_namayogam_df.iloc[:, 5:]
 
-
 # Concatenate the values from the first part into the second part
 # Here, we concatenate row-wise using 'pd.concat'.
 combined_df = pd.concat([selected_namayogam_df.iloc[:, :1], second_part], axis=1)
 
 # Display the first part and second part of the DataFrame separately
-#st.markdown("<h2>First Part</h2>", unsafe_allow_html=True)
 st.markdown(first_part.to_html(escape=False, index=False), unsafe_allow_html=True)
 
-#st.markdown("<h2>Second Part (After Adding First Part)</h2>", unsafe_allow_html=True)
 st.markdown(combined_df.to_html(escape=False, index=False), unsafe_allow_html=True)
 
 # Mudakku section with clickable link
 st.markdown("<h2 style='text-align: center; color: black;'>முடக்கு</h2>", unsafe_allow_html=True)
 df3 = pd.read_excel("mohan04.xlsx", engine="openpyxl")
 mudakku = st.sidebar.selectbox('முடக்கு', df3['முடக்கு பாவகம் '].unique())
-mudakku_rasi = st.sidebar.selectbox("முடக்கு ராசி/கிரகம்", df3['முடக்கு ராசி/கிரகம்'].unique())
-selected_mudakku_df = df3[(df3['முடக்கு பாவகம் '] == int(mudakku)) & (df3['முடக்கு ராசி/கிரகம்'] == mudakku_rasi)].copy()
+
+# Allow multiple selections for "முடக்கு ராசி/கிரகம்"
+mudakku_rasi = st.sidebar.multiselect("முடக்கு ராசி/கிரகம்", df3['முடக்கு ராசி/கிரகம்'].unique())
+
+# Filter based on multiple selected values for "முடக்கு ராசி/கிரகம்"
+if mudakku_rasi:
+    selected_mudakku_df = df3[(df3['முடக்கு பாவகம் '] == int(mudakku)) & (df3['முடக்கு ராசி/கிரகம்'].isin(mudakku_rasi))].copy()
+else:
+    selected_mudakku_df = pd.DataFrame()  # Show an empty DataFrame if no selection
 
 # Make both link columns clickable
 selected_mudakku_df = make_links_clickable(selected_mudakku_df, ['இணையதள இணைப்பு', 'இணையதள இணைப்பு.1'])
