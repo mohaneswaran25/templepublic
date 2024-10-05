@@ -76,7 +76,7 @@ st.markdown("<h2>First Part</h2>", unsafe_allow_html=True)
 st.markdown(first_part.to_html(escape=False, index=False), unsafe_allow_html=True)
 
 st.markdown("<h2>Second Part (After Adding First Part)</h2>", unsafe_allow_html=True)
-st.markdown(combined_df.to_html(escape=False, index=False), unsafe_allow_html=True)
+st.markdown(second_part.to_html(escape=False, index=False), unsafe_allow_html=True)
 
 # Mudakku section with clickable link
 st.markdown("<h1 style='text-align: center; color: black;'>முடக்கு</h1>", unsafe_allow_html=True)
