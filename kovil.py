@@ -35,6 +35,14 @@ st.markdown(
     "<h1 style='text-align: center; color: black;'>Cell: +91 8883113734</h1>",
     unsafe_allow_html=True)
 
+# Add text input for the user's name
+user_name = st.sidebar.text_input("Enter your name:")
+
+# Display the entered name in the main section
+if user_name:
+    st.markdown(f"<h2 style='text-align: center; color: blue;'>Welcome, {user_name}!</h2>", unsafe_allow_html=True)
+
+
 # Sidebar selection for Tithi, Yogam, Mudakku, and Karanam
 tithi_type = st.sidebar.selectbox("திதி", ('வளர்பிறை திதி', 'தேய்பிறை திதி'))
 
