@@ -1,13 +1,14 @@
 import streamlit as st
 import pandas as pd
 
-
-# Function to make "இணையதள இணைப்பு" and "இணையதள இணைப்பு.1" columns clickable
+# Function to make "இணையதள இணைப்பு" and "இணையதள இணைப்பு.1" columns clickable,
+# even if the value is empty or None
 def make_links_clickable(df, link_columns):
     for col in link_columns:
         if col in df.columns:
             df[col] = df[col].apply(
-                lambda x: f'<a href="{x}" target="_blank">Click here</a>' if pd.notna(x) else '')
+                lambda x: f'<a href="{x}" target="_blank">Click here</a>' if pd.notna(x) and x.strip() != '' else '<a href="#">No Link</a>'
+            )
     return df
 
 
