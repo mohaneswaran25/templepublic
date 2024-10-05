@@ -26,7 +26,7 @@ st.markdown("""
 
 # Header Information
 st.markdown(
-    "<h2 style='text-align: center; color: black;'>திதி யோக கரண ஆராய்ச்சியாளர் <br> திரு. சந்திர சிவக்குமார்<br>கால பைரவர் ஜோதிட பவனம்,<br>காடையாம்பட்டி, சேலம் மாவட்டம்</h2><h3 style='text-align: center; color: black;'>Cell: +91 8883113734</h3>",
+    "<h2 style='text-align: center; color: black;'>திதி யோக கரண ஆராய்ச்சியாளர் <br>ஜோதிடர் சந்திர சிவக்குமார்<br>கால பைரவர் ஜோதிட பவனம்<br>காடையாம்பட்டி வட்டம் சேலம் மாவட்டம்</h2><h3 style='text-align: center; color: black;'>Cell: +91 8883113734</h3>",
     unsafe_allow_html=True)
 
 # Add text input for the user's name
