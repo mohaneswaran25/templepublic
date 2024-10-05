@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 
+
 # Function to make "இணையதள இணைப்பு" and "இணையதள இணைப்பு.1" columns clickable
 def make_links_clickable(df, link_columns):
     for col in link_columns:
@@ -9,23 +10,6 @@ def make_links_clickable(df, link_columns):
                 lambda x: f'<a href="{x}" target="_blank">Click here</a>' if pd.notna(x) else '')
     return df
 
-# Custom CSS for auto-sizing table width and height
-st.markdown("""
-    <style>
-    .dataframe-container {
-       
-        overflow-x: auto;
-        overflow-y: auto;
-    }
-    table {
-       
-    }
-    th, td {
-        padding: 10px;
-        text-align: left;
-    }
-    </style>
-""", unsafe_allow_html=True)
 
 # Header Information
 st.markdown(
@@ -55,7 +39,7 @@ selected_tithi_df = df[df.iloc[:, 0] == tithi].copy()
 
 # Make both link columns clickable
 selected_tithi_df = make_links_clickable(selected_tithi_df, ['இணையதள இணைப்பு', 'இணையதள இணைப்பு.1'])
-st.markdown(f'<div class="dataframe-container">{selected_tithi_df.to_html(escape=False, index=False)}</div>', unsafe_allow_html=True)
+st.markdown(selected_tithi_df.to_html(escape=False, index=False), unsafe_allow_html=True)
 
 # Namayogam section with clickable link
 st.markdown("<h1 style='text-align: center; color: black;'>நாம யோகங்கள்</h1>", unsafe_allow_html=True)
@@ -65,7 +49,7 @@ selected_namayogam_df = df2[df2.iloc[:, 0] == nam_yogam].copy()
 
 # Make both link columns clickable
 selected_namayogam_df = make_links_clickable(selected_namayogam_df, ['இணையதள இணைப்பு', 'இணையதள இணைப்பு.1'])
-st.markdown(f'<div class="dataframe-container">{selected_namayogam_df.to_html(escape=False, index=False)}</div>', unsafe_allow_html=True)
+st.markdown(selected_namayogam_df.to_html(escape=False, index=False), unsafe_allow_html=True)
 
 # Mudakku section with clickable link
 st.markdown("<h1 style='text-align: center; color: black;'>முடக்கு</h1>", unsafe_allow_html=True)
@@ -76,7 +60,7 @@ selected_mudakku_df = df3[(df3['முடக்கு பாவகம் '] == i
 
 # Make both link columns clickable
 selected_mudakku_df = make_links_clickable(selected_mudakku_df, ['இணையதள இணைப்பு', 'இணையதள இணைப்பு.1'])
-st.markdown(f'<div class="dataframe-container">{selected_mudakku_df.to_html(escape=False, index=False)}</div>', unsafe_allow_html=True)
+st.markdown(selected_mudakku_df.to_html(escape=False, index=False), unsafe_allow_html=True)
 
 # Vainasikam section with clickable link
 st.markdown("<h1 style='text-align: center; color: black;'>வைநாசிகம்</h1>", unsafe_allow_html=True)
@@ -86,7 +70,7 @@ selected_vainasikam_df = df4[df4.iloc[:, 0] == vainasikam].copy()
 
 # Make both link columns clickable
 selected_vainasikam_df = make_links_clickable(selected_vainasikam_df, ['இணையதள இணைப்பு', 'இணையதள இணைப்பு.1'])
-st.markdown(f'<div class="dataframe-container">{selected_vainasikam_df.to_html(escape=False, index=False)}</div>', unsafe_allow_html=True)
+st.markdown(selected_vainasikam_df.to_html(escape=False, index=False), unsafe_allow_html=True)
 
 # Karanam section with clickable link
 st.markdown("<h1 style='text-align: center; color: black;'>கரணம்</h1>", unsafe_allow_html=True)
@@ -96,4 +80,4 @@ selected_karanam_df = df5[df5.iloc[:, 0] == karanam].copy()
 
 # Make both link columns clickable
 selected_karanam_df = make_links_clickable(selected_karanam_df, ['இணையதள இணைப்பு', 'இணையதள இணைப்பு.1'])
-st.markdown(f'<div class="dataframe-container">{selected_karanam_df.to_html(escape=False, index=False)}</div>', unsafe_allow_html=True)
+st.markdown(selected_karanam_df.to_html(escape=False, index=False), unsafe_allow_html=True)
