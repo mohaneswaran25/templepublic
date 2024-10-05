@@ -18,8 +18,7 @@ st.markdown("""
         overflow-y: auto;
     }
     table {
-        width: auto !important;
-        height: auto !important;
+       
     }
     th, td {
         padding: 10px;
