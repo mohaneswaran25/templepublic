@@ -70,7 +70,7 @@ second_part = selected_namayogam_df.iloc[:, 5:]
 
 # Concatenate the values from the first part into the second part
 # Here, we concatenate row-wise using 'pd.concat'.
-combined_df = pd.concat([selected_namayogam_df.iloc[:, :1],second_part, axis=1 ])
+combined_df = pd.concat([selected_namayogam_df.iloc[:, :1], second_part], axis=1)
 
 # Display the first part and second part of the DataFrame separately
 st.markdown("<h2>First Part</h2>", unsafe_allow_html=True)
