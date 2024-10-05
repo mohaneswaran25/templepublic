@@ -40,7 +40,7 @@ user_name = st.sidebar.text_input("Enter your name:")
 
 # Display the entered name in the main section
 if user_name:
-    st.markdown(f"<h2 style='text-align: center; color: blue;'>ஜாதகர், {user_name}, வழிபடவேண்டிய கோவில்கள்!</h2>", unsafe_allow_html=True)
+    st.markdown(f"<h2 style='text-align: center; color: black;'>ஜாதகர், {user_name}, வழிபடவேண்டிய கோவில்கள்!</h2>", unsafe_allow_html=True)
 
 
 # Sidebar selection for Tithi, Yogam, Mudakku, and Karanam
