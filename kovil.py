@@ -24,7 +24,6 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-
 # Header Information
 st.markdown(
     "<h1 style='text-align: center; color: black;'>திதி யோக கரண ஆராய்ச்சியாளர் திரு. சந்திர சிவக்குமார்</h1>",
@@ -63,7 +62,21 @@ selected_namayogam_df = df2[df2.iloc[:, 0] == nam_yogam].copy()
 
 # Make both link columns clickable
 selected_namayogam_df = make_links_clickable(selected_namayogam_df, ['இணையதள இணைப்பு', 'இணையதள இணைப்பு.1'])
-st.markdown(selected_namayogam_df.to_html(escape=False, index=False), unsafe_allow_html=True)
+
+# Split the DataFrame at the 5th index
+first_part = selected_namayogam_df.iloc[:5]
+second_part = selected_namayogam_df.iloc[5:]
+
+# Concatenate the values from the first part into the second part
+# Here, we concatenate row-wise using 'pd.concat'.
+combined_df = pd.concat([second_part, first_part])
+
+# Display the first part and second part of the DataFrame separately
+st.markdown("<h2>First Part</h2>", unsafe_allow_html=True)
+st.markdown(first_part.to_html(escape=False, index=False), unsafe_allow_html=True)
+
+st.markdown("<h2>Second Part (After Adding First Part)</h2>", unsafe_allow_html=True)
+st.markdown(combined_df.to_html(escape=False, index=False), unsafe_allow_html=True)
 
 # Mudakku section with clickable link
 st.markdown("<h1 style='text-align: center; color: black;'>முடக்கு</h1>", unsafe_allow_html=True)
