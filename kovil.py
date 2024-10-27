@@ -1,8 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-# Function to make "இணையதள இணைப்பு" and "இணையதள இணைப்பு.1" columns clickable,
-# even if the value is empty or None
+# Function to make specified columns clickable
 def make_links_clickable(df, link_columns):
     for col in link_columns:
         if col in df.columns:
@@ -42,7 +41,7 @@ if user_name:
 
 # Main Page Content
 if page == "Main Page":
-    # Sidebar selection for Tithi, Yogam, Mudakku, and Karanam
+    # Sidebar selection for Tithi
     tithi_type = st.sidebar.selectbox("திதி", ('வளர்பிறை திதி', 'தேய்பிறை திதி'))
 
     # Load respective data based on Tithi type
@@ -56,18 +55,14 @@ if page == "Main Page":
     # Tithi selection with clickable link
     tithi = st.sidebar.selectbox('திதி', df.iloc[:, 0].values)
     selected_tithi_df = df[df.iloc[:, 0] == tithi].copy()
-
-    # Make both link columns clickable
     selected_tithi_df = make_links_clickable(selected_tithi_df, ['இணையதள இணைப்பு', 'இணையதள இணைப்பு.1'])
     st.markdown(selected_tithi_df.to_html(escape=False, index=False), unsafe_allow_html=True)
 
-    # Namayogam section with clickable link
+    # Namayogam section
     st.markdown("<h2 style='text-align: center; color: black;'>நாம யோகங்கள்</h2>", unsafe_allow_html=True)
     df2 = pd.read_excel("mohan03.xlsx", engine="openpyxl")
     nam_yogam = st.sidebar.selectbox('நாம யோகங்கள்', df2.iloc[:, 0].values)
     selected_namayogam_df = df2[df2.iloc[:, 0] == nam_yogam].copy()
-
-    # Make both link columns clickable
     selected_namayogam_df = make_links_clickable(selected_namayogam_df, ['இணையதள இணைப்பு', 'இணையதள இணைப்பு.1'])
 
     # Split and display the DataFrame sections
@@ -78,17 +73,16 @@ if page == "Main Page":
     st.markdown(first_part.to_html(escape=False, index=False), unsafe_allow_html=True)
     st.markdown(combined_df.to_html(escape=False, index=False), unsafe_allow_html=True)
 
-    # Mudakku section with clickable link
+    # Mudakku section
     st.markdown("<h2 style='text-align: center; color: black;'>முடக்கு</h2>", unsafe_allow_html=True)
     df3 = pd.read_excel("mohan04.xlsx", engine="openpyxl")
     mudakku = st.sidebar.selectbox('முடக்கு', df3['முடக்கு பாவகம் '].unique())
     mudakku_rasi = st.sidebar.multiselect("முடக்கு ராசி/கிரகம்", df3['முடக்கு ராசி/கிரகம்'].unique())
 
-    # Filter based on multiple selected values for "முடக்கு ராசி/கிரகம்"
     if mudakku_rasi:
         selected_mudakku_df = df3[(df3['முடக்கு பாவகம் '] == int(mudakku)) & (df3['முடக்கு ராசி/கிரகம்'].isin(mudakku_rasi))].copy()
     else:
-        selected_mudakku_df = pd.DataFrame()  # Show an empty DataFrame if no selection
+        selected_mudakku_df = pd.DataFrame()
 
     selected_mudakku_df = make_links_clickable(selected_mudakku_df, ['இணையதள இணைப்பு', 'இணையதள இணைப்பு.1'])
     st.markdown(selected_mudakku_df.to_html(escape=False, index=False), unsafe_allow_html=True)
@@ -113,26 +107,19 @@ if page == "Main Page":
 elif page == "Karma Star":
     # Display Karma Star Section
     st.markdown("<h2 style='text-align: center; color: black;'>கர்ம நட்சத்திரம்</h2>", unsafe_allow_html=True)
-    dfa= pd.read_excel("kar.xlsx", engine="openpyxl")
+    dfa = pd.read_excel("kar.xlsx", engine="openpyxl")
     kar = st.sidebar.selectbox('கர்ம நட்சத்திரம்', dfa.iloc[:, 0].values)
     selected_kar_df = dfa[dfa.iloc[:, 0] == kar].copy()
     selected_kar_df = make_links_clickable(selected_kar_df, ['இணையதள இணைப்பு'])
     st.markdown(selected_kar_df.to_html(escape=False, index=False), unsafe_allow_html=True)
     
+    # Additional Karma Star section
     st.markdown("<h2 style='text-align: center; color: black;'>யோகாதிபதி கரணாதிபதி கர்ம நட்சத்திரத்தில் நின்றால்</h2>", unsafe_allow_html=True)
-
-    # Load data for Karma Star
     df_karma = pd.read_excel("karma_star.xlsx", engine="openpyxl")
 
-    # Sidebar multiselect for "கர்ம நட்சத்திரம்"
+    # Multiselect for additional Karma Star data
     karma = st.sidebar.multiselect('யோகாதிபதி கரணாதிபதி கர்ம நட்சத்திரத்தில் நின்றால்', df_karma['கர்ம நட்சத்திரம்'].unique())
+    selected_karma_df = df_karma[df_karma['கர்ம நட்சத்திரம்'].isin(karma)].copy() if karma else pd.DataFrame()
 
-    # Filter based on selected Karma Star values
-    if karma:
-        selected_karma_df = df_karma[df_karma['கர்ம நட்சத்திரம்'].isin(karma)].copy()
-    else:
-        selected_karma_df = pd.DataFrame()  # Show an empty DataFrame if no selection
-
-    # Make the link column clickable
     selected_karma_df = make_links_clickable(selected_karma_df, ['இணையதள இணைப்பு'])
     st.markdown(selected_karma_df.to_html(escape=False, index=False), unsafe_allow_html=True)
