@@ -113,12 +113,19 @@ if page == "Main Page":
 elif page == "Karma Star":
     # Display Karma Star Section
     st.markdown("<h2 style='text-align: center; color: black;'>கர்ம நட்சத்திரம்</h2>", unsafe_allow_html=True)
+    dfa= pd.read_excel("kar.xlsx", engine="openpyxl")
+    kar = st.sidebar.selectbox('கர்ம நட்சத்திரம்', dfa.iloc[:, 0].values)
+    selected_kar_df = dfa[dfa.iloc[:, 0] == kar].copy()
+    selected_kar_df = make_links_clickable(selected_kar_df, ['இணையதள இணைப்பு'])
+    st.markdown(selected_kar_df.to_html(escape=False, index=False), unsafe_allow_html=True)
+    
+    st.markdown("<h2 style='text-align: center; color: black;'>யோகாதிபதி கரணாதிபதி கர்ம நட்சத்திரத்தில் நின்றால்</h2>", unsafe_allow_html=True)
 
     # Load data for Karma Star
     df_karma = pd.read_excel("karma_star.xlsx", engine="openpyxl")
 
     # Sidebar multiselect for "கர்ம நட்சத்திரம்"
-    karma = st.sidebar.multiselect('கர்ம நட்சத்திரம்', df_karma['கர்ம நட்சத்திரம்'].unique())
+    karma = st.sidebar.multiselect('யோகாதிபதி கரணாதிபதி கர்ம நட்சத்திரத்தில் நின்றால்', df_karma['கர்ம நட்சத்திரம்'].unique())
 
     # Filter based on selected Karma Star values
     if karma:
