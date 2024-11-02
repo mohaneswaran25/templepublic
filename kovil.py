@@ -134,8 +134,8 @@ elif page == "Namayoga Palankal":
     selected_namayogam_df = make_links_clickable(selected_namayogam_df, ['இணையதள இணைப்பு', 'இணையதள இணைப்பு.1'])
 
     # Split and display the DataFrame sections
-    first_part = selected_namayogam_df.iloc[:, :5]
-    second_part = selected_namayogam_df.iloc[:, 5:]
+    first_part = selected_namayogam_df.iloc[:, :4]
+    second_part = selected_namayogam_df.iloc[:, 4:]
     combined_df = pd.concat([selected_namayogam_df.iloc[:, :1], second_part], axis=1)
 
     st.markdown(first_part.to_html(escape=False, index=False), unsafe_allow_html=True)
