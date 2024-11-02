@@ -24,7 +24,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Sidebar page selection for navigation
-page = st.sidebar.selectbox("Choose a page", ["Main Page", "Karma Star"])
+page = st.sidebar.selectbox("Choose a page", ["Main Page", "Karma Star", "Namayoga Palankal"])
 
 # Header Information (shown on both pages)
 st.markdown(
@@ -123,3 +123,20 @@ elif page == "Karma Star":
 
     selected_karma_df = make_links_clickable(selected_karma_df, ['இணையதள இணைப்பு'])
     st.markdown(selected_karma_df.to_html(escape=False, index=False), unsafe_allow_html=True)
+
+# Yogi Palankal Page Content
+elif page == "Namayoga Palankal":
+    # Namayogam section
+    st.markdown("<h2 style='text-align: center; color: black;'>நாம யோக பலன்கள்</h2>", unsafe_allow_html=True)
+    df2 = pd.read_excel("Namayoga Palankal.xlsx", engine="openpyxl")
+    nam_yogam = st.sidebar.selectbox('நாம யோகங்கள்', df2.iloc[:, 0].values)
+    selected_namayogam_df = df2[df2.iloc[:, 0] == nam_yogam].copy()
+    selected_namayogam_df = make_links_clickable(selected_namayogam_df, ['இணையதள இணைப்பு', 'இணையதள இணைப்பு.1'])
+
+    # Split and display the DataFrame sections
+    first_part = selected_namayogam_df.iloc[:, :5]
+    second_part = selected_namayogam_df.iloc[:, 5:]
+    combined_df = pd.concat([selected_namayogam_df.iloc[:, :1], second_part], axis=1)
+
+    st.markdown(first_part.to_html(escape=False, index=False), unsafe_allow_html=True)
+    st.markdown(combined_df.to_html(escape=False, index=False), unsafe_allow_html=True)
