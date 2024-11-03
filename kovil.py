@@ -129,8 +129,25 @@ elif page == "Karma Star":
     selected_karma_df = make_links_clickable(selected_karma_df, ['இணையதள இணைப்பு'])
     st.markdown(selected_karma_df.to_html(escape=False, index=False), unsafe_allow_html=True)
 
+    
 # Yogi Palankal Page Content
-elif page == "Namayoga Palankal":
+elif page == "thiti-mudaku-Namayoga Palankal":
+    # thiti section
+    st.markdown("<h2 style='text-align: center; color: black;'>திதி பலன்கள்</h2>", unsafe_allow_html=True)
+    df = pd.read_excel("thithi_palankal.xlsx", engine="openpyxl")
+    nam_yogam = st.sidebar.selectbox('திதி', df.iloc[:, 0].values)
+    selected_tithi_df = df[df.iloc[:, 0] == nam_yogam].copy()
+    selected_tithi_df = make_links_clickable(selected_tithi_df, ['இணையதள இணைப்பு', 'இணையதள இணைப்பு.1'])
+    st.markdown(selected_tithi_df.to_html(escape=False, index=False), unsafe_allow_html=True)
+
+    # mudakku section
+    st.markdown("<h2 style='text-align: center; color: black;'>முடக்கு பலன்கள்</h2>", unsafe_allow_html=True)
+    df1 = pd.read_excel("thithi_palankal.xlsx", engine="openpyxl")
+    nam_yogam = st.sidebar.selectbox('முடக்கு பாவகம்', df1.iloc[:, 0].values)
+    selected_mudakku_df = df1[df1.iloc[:, 0] == nam_yogam].copy()
+    selected_mudakku_df = make_links_clickable(selected_mudakku_df, ['இணையதள இணைப்பு', 'இணையதள இணைப்பு.1'])
+    st.markdown(selected_mudakku_df.to_html(escape=False, index=False), unsafe_allow_html=True)
+
     # Namayogam section
     st.markdown("<h2 style='text-align: center; color: black;'>நாம யோக பலன்கள்</h2>", unsafe_allow_html=True)
     df2 = pd.read_excel("Namayoga Palankal.xlsx", engine="openpyxl")
