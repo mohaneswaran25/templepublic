@@ -142,7 +142,7 @@ elif page == "thiti-mudaku-Namayoga Palankal":
 
     # mudakku section
     st.markdown("<h2 style='text-align: center; color: black;'>முடக்கு பலன்கள்</h2>", unsafe_allow_html=True)
-    df1 = pd.read_excel("thithi_palankal.xlsx", engine="openpyxl")
+    df1 = pd.read_excel("mudakku-palangal.xlsx", engine="openpyxl")
     mudaku = st.sidebar.selectbox('முடக்கு பாவகம்', df1.iloc[:, 0].values)
     selected_mudakku_df = df1[df1.iloc[:, 0] == mudaku].copy()
     selected_mudakku_df = make_links_clickable(selected_mudakku_df, ['இணையதள இணைப்பு', 'இணையதள இணைப்பு.1'])
