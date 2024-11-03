@@ -24,7 +24,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Sidebar page selection for navigation
-page = st.sidebar.selectbox("Choose a page", ["Main Page", "Karma Star", "Namayoga Palankal"])
+page = st.sidebar.selectbox("Choose a page", ["Main Page", "Karma Star", "thiti-mudaku-Namayoga Palankal"])
 
 # Header Information (shown on both pages)
 st.markdown(
