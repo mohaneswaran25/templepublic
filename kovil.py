@@ -108,7 +108,7 @@ elif page == "Karma Star":
     # Display Karma Star Section
     st.markdown("<h2 style='text-align: center; color: black;'>கர்ம நட்சத்திரம்</h2>", unsafe_allow_html=True)
     dfa = pd.read_excel("kar.xlsx", engine="openpyxl")
-    kar = st.sidebar.selectbox('கர்ம நட்சத்திரம்', dfa.iloc[:, 0].values)
+    kar = st.sidebar.multiselect('கர்ம நட்சத்திரம்', dfa.iloc[:, 0].values)
     selected_kar_df = dfa[dfa.iloc[:, 0] == kar].copy()
     # dfa = pd.read_excel("karma_star.xlsx", engine="openpyxl")
     # kar = st.sidebar.multiselect('கர்ம நட்சத்திரம்', df_karma['கர்ம நட்சத்திரம்'].unique())
