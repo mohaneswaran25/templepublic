@@ -107,15 +107,20 @@ if page == "Main Page":
 elif page == "Karma Star":
     # Display Karma Star Section
     st.markdown("<h2 style='text-align: center; color: black;'>கர்ம நட்சத்திரம்</h2>", unsafe_allow_html=True)
-    dfa = pd.read_excel("kar.xlsx", engine="openpyxl")
-    kar = st.sidebar.selectbox('கர்ம நட்சத்திரம்', dfa.iloc[:, 0].values)
-    selected_kar_df = dfa[dfa.iloc[:, 0] == kar].copy()
+    #dfa = pd.read_excel("kar.xlsx", engine="openpyxl")
+    #kar = st.sidebar.selectbox('கர்ம நட்சத்திரம்', dfa.iloc[:, 0].values)
+    #selected_kar_df = dfa[dfa.iloc[:, 0] == kar].copy()
+    dfa = pd.read_excel("karma_star.xlsx", engine="openpyxl")
+    kar = st.sidebar.multiselect('கர்ம நட்சத்திரம்', df_karma['கர்ம நட்சத்திரம்'].unique())
+    selected_kar_df = dfa[dfa['கர்ம நட்சத்திரம்'].isin(kar)].copy() if kar else pd.DataFrame()
+    
     selected_kar_df = make_links_clickable(selected_kar_df, ['இணையதள இணைப்பு'])
     st.markdown(selected_kar_df.to_html(escape=False, index=False), unsafe_allow_html=True)
     
     # Additional Karma Star section
     st.markdown("<h2 style='text-align: center; color: black;'>யோகாதிபதி கரணாதிபதி கர்ம நட்சத்திரத்தில் நின்றால்</h2>", unsafe_allow_html=True)
-    df_karma = pd.read_excel("karma_star.xlsx", engine="openpyxl")
+    #df_karma = pd.read_excel("karma_star.xlsx", engine="openpyxl")
+    df_karma = pd.read_excel("kar.xlsx", engine="openpyxl")
 
     # Multiselect for additional Karma Star data
     karma = st.sidebar.multiselect('யோகாதிபதி கரணாதிபதி கர்ம நட்சத்திரத்தில் நின்றால்', df_karma['கர்ம நட்சத்திரம்'].unique())
