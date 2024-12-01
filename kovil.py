@@ -85,20 +85,27 @@ if user_name:
 # Main Page Content
 if page == "Main Page":
     # Angusunaathar Section
-    st.markdown("<h2 style='text-align: center; color: black;'>அங்குசுணாதார் தகவல்</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align: center; color: black;'>அங்குசுநாதர் தகவல்</h2>", unsafe_allow_html=True)
     
     # Load Angusunaathar data
-    angusunaathar_data = pd.read_excel("angusunaathar.xlsx", engine="openpyxl")
-    angusunaathar_df = make_links_clickable(angusunaathar_data, ["Website Links"])
-    
-    # Display data in dropdown
-    angusunaathar_options = angusunaathar_df.iloc[:, 0].unique()
-    selected_angusunaathar = st.sidebar.selectbox("அங்குசுணாதார் தேர்வு", angusunaathar_options)
+    df = pd.read_excel("angusunaathar.xlsx", engine="openpyxl")
+    #angusunaathar_df = make_links_clickable(angusunaathar_data, ["Website Links"])
+
+    # Display data in dropwn
+    selected_angusunaathar = st.sidebar.selectbox('அங்குசுநாதர்', df.iloc[:, 0].values)
     
     # Filter and display selected data
-    selected_angusunaathar_df = angusunaathar_df[angusunaathar_df.iloc[:, 0] == selected_angusunaathar]
+    selected_angusunaathar_df = df[df.iloc[:, 0] == selected_angusunaathar].copy()
+    selected_angusunaathar_df = make_links_clickable(selected_angusunaathar_df, ['Website Links'])
     st.markdown(selected_angusunaathar_df.to_html(escape=False, index=False), unsafe_allow_html=True)
 
+    # Tithi selection with clickable link
+    tithi = st.sidebar.selectbox('திதி', df.iloc[:, 0].values)
+    selected_tithi_df = df[df.iloc[:, 0] == tithi].copy()
+    selected_tithi_df = make_links_clickable(selected_tithi_df, ['இணையதள இணைப்பு', 'இணையதள இணைப்பு.1'])
+    st.markdown(selected_tithi_df.to_html(escape=False, index=False), unsafe_allow_html=True)
+
+    
     # Sidebar selection for Tithi
     tithi_type = st.sidebar.selectbox("திதி", ('வளர்பிறை திதி', 'தேய்பிறை திதி'))
 
