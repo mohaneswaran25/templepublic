@@ -41,6 +41,14 @@ if user_name:
 
 # Main Page Content
 if page == "Main Page":
+    # Angusunaathar Section
+    st.markdown("<h2 style='text-align: center; color: black;'>அங்குசுநாதர்</h2>", unsafe_allow_html=True)
+    df9 = pd.read_excel("angusunaathar.xlsx", engine="openpyxl")
+    selected_angusunaathar = st.sidebar.selectbox('அங்குசுநாதர்', df9.iloc[:, 0].values)
+    selected_angusunaathar_df = df9[df9.iloc[:, 0] == selected_angusunaathar].copy()
+    selected_angusunaathar_df = make_links_clickable(selected_angusunaathar_df, ['Website Links'])
+    st.markdown(selected_angusunaathar_df.to_html(escape=False, index=False), unsafe_allow_html=True)
+
     # Sidebar selection for Tithi
     tithi_type = st.sidebar.selectbox("திதி", ('வளர்பிறை திதி', 'தேய்பிறை திதி'))
 
