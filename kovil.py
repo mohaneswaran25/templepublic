@@ -41,6 +41,64 @@ if user_name:
 
 # Main Page Content
 if page == "Main Page":
+    import streamlit as st
+import pandas as pd
+
+# Function to make specified columns clickable
+def make_links_clickable(df, link_columns):
+    for col in link_columns:
+        if col in df.columns:
+            df[col] = df[col].apply(
+                lambda x: f'<a href="{x}" target="_blank">Click here</a>' if pd.notna(x) and x.strip() != '' else '<a href="#">No Link</a>'
+            )
+    return df
+
+# Custom CSS for centering table content
+st.markdown("""
+    <style>
+    table {
+        width: auto;
+    }
+    th, td {
+        text-align: center !important;
+        vertical-align: middle !important;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+# Sidebar page selection for navigation
+page = st.sidebar.selectbox("Choose a page", ["Main Page", "Karma Star", "thiti-mudaku-Namayoga Palankal"])
+
+# Header Information (shown on both pages)
+st.markdown(
+    "<h2 style='text-align: center; color: black;'>திதி யோக கரண ஆராய்ச்சியாளர் <br>கால கணித ஜோதிடர்<br> சந்திர சிவக்குமார்<br>கால பைரவர் ஜோதிட பவனம்<br>காடையாம்பட்டி வட்டம் <br> சேலம் மாவட்டம்</h2><h3 style='text-align: center; color: black;'>Cell: +91 8883113734</h3>",
+    unsafe_allow_html=True
+)
+
+# Add text input for the user's name
+user_name = st.sidebar.text_input("Enter your name:")
+
+# Display the entered name in the main section if provided
+if user_name:
+    st.markdown(f"<h3 style='text-align: center; color: black;'>ஜாதகர், {user_name}, வழிபடவேண்டிய கோவில்கள்!</h3>", unsafe_allow_html=True)
+
+# Main Page Content
+if page == "Main Page":
+    # Angusunaathar Section
+    st.markdown("<h2 style='text-align: center; color: black;'>அங்குசுணாதார் தகவல்</h2>", unsafe_allow_html=True)
+    
+    # Load Angusunaathar data
+    angusunaathar_data = pd.read_excel("angusunaathar.xlsx", engine="openpyxl")
+    angusunaathar_df = make_links_clickable(angusunaathar_data, ["Website Links"])
+    
+    # Display data in dropdown
+    angusunaathar_options = angusunaathar_df.iloc[:, 0].unique()
+    selected_angusunaathar = st.sidebar.selectbox("அங்குசுணாதார் தேர்வு", angusunaathar_options)
+    
+    # Filter and display selected data
+    selected_angusunaathar_df = angusunaathar_df[angusunaathar_df.iloc[:, 0] == selected_angusunaathar]
+    st.markdown(selected_angusunaathar_df.to_html(escape=False, index=False), unsafe_allow_html=True)
+
     # Sidebar selection for Tithi
     tithi_type = st.sidebar.selectbox("திதி", ('வளர்பிறை திதி', 'தேய்பிறை திதி'))
 
