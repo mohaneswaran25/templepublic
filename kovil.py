@@ -99,13 +99,6 @@ if page == "Main Page":
     selected_angusunaathar_df = make_links_clickable(selected_angusunaathar_df, ['Website Links'])
     st.markdown(selected_angusunaathar_df.to_html(escape=False, index=False), unsafe_allow_html=True)
 
-    # Tithi selection with clickable link
-    tithi = st.sidebar.selectbox('திதி', df.iloc[:, 0].values)
-    selected_tithi_df = df[df.iloc[:, 0] == tithi].copy()
-    selected_tithi_df = make_links_clickable(selected_tithi_df, ['இணையதள இணைப்பு', 'இணையதள இணைப்பு.1'])
-    st.markdown(selected_tithi_df.to_html(escape=False, index=False), unsafe_allow_html=True)
-
-    
     # Sidebar selection for Tithi
     tithi_type = st.sidebar.selectbox("திதி", ('வளர்பிறை திதி', 'தேய்பிறை திதி'))
 
